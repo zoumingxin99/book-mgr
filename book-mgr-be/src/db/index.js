@@ -1,4 +1,6 @@
 require('./Schemas/User');
+require('./Schemas/InviteCode');
+require('./Schemas/Book');
 
 const mongoose = require('mongoose');
 
@@ -25,3 +27,29 @@ const connect = () => {
 module.exports = {
     connect,
 };
+
+
+// const UserSchema = new mongoose.Schema({
+//     nickname: String,
+//     password: String,
+//     age: Number,
+// });
+
+// const UserModal = mongoose.model('User', UserSchema);
+// const connect = () => {
+//     // 连接DB数据库
+//     mongoose.connect('mongodb://127.0.0.1:27017/book-mgr');
+
+//     //当数据库打开时 做的一些事
+//     mongoose.connection.on('open', () => {
+//         console.log('连接数据库成功');
+        
+//         const user = new UserModal({
+//             nickname: '小明',
+//             password: '123',
+//             age: 12,
+//         });
+    
+//         user.save();
+//     });
+// };

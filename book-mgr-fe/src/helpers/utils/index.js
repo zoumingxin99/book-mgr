@@ -27,3 +27,22 @@ export const result = (response, authShowErrorMsg = true) => {
         },
     };
 };
+
+export const clone = (obj) => {
+    return JSON.parse(JSON.stringify(obj));
+};
+
+//格式化时间锉
+export const formatTimestamp = (ts) => {
+    const date = new Date(Number(ts));
+
+    const YYYY = date.getFullYear();
+    const MM = date.getMonth() + 1;
+    const DD = date.getDate();
+
+    const hh =date.getHours();
+    const mm = date.getMinutes();
+    const ss = date.getSeconds();
+
+    return `${YYYY}/${MM}/${DD} ${hh}:${mm}:${ss}`;
+};
